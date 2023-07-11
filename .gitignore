@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+
 *.py[cod]
 *$py.class
 
@@ -34,6 +35,7 @@ MANIFEST
 *.spec
 
 # Installer logs
+**/logs
 pip-log.txt
 pip-delete-this-directory.txt
 
@@ -104,6 +106,7 @@ celerybeat.pid
 .venv
 env/
 venv/
+dev.env
 ENV/
 env.bak/
 venv.bak/
@@ -129,21 +132,16 @@ dmypy.json
 
 # Mac/OSX
 .DS_Store/
+**/.DS_Store
 
 # Исключение db
 /db
 
 # Pyre type checker
 .pyre/
-.idea
-**/.DS_Store
-venv/
+
+# tests
 .pytest*
-**/__pycache__/
-dev.env
+
+# docker
 dev-docker-compose.yml
-deploy/.cache/
-**/logs
-.pytest_cache
-.env
-.vscode
