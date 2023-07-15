@@ -11,7 +11,7 @@ from app import config
 def main():
     description = (
         "Web-application for optimizing the learning of schoolchildren and students\n\n"
-        "Dash app at \\ \n" 
+        "Dash app at \\ \n"
         "REST API docs at \\docs\\ "
     )
     formatter = argparse.RawDescriptionHelpFormatter
@@ -32,7 +32,7 @@ def main():
         type=int,
         help=f"bind socket to this port [default: {config.BACKEND_PORT}]",
     )
-    parser.add_argument('--reload')
+    parser.add_argument("--reload")
     args = parser.parse_args()
     config.DB_PATH = Path(args.db_path)
     config.BACKEND_URL_WITH_PORT = f"{config.BACKEND_URL}:{args.port}"
