@@ -35,3 +35,6 @@ jobs:
     - name: Lint with Black
       run: |
         black --check --verbose .
+    - name: Run mypy
+      run: |
+        mypy --strict
