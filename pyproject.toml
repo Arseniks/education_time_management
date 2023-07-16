@@ -9,7 +9,7 @@ authors = [
     "Andrulik <Avesvecha@yandex.ru>"
 ]
 readme = "README.md"
-license = {text = "Unlicense"}
+license = "Proprietary"
 
 [project.urls]
 repository = "https://github.com/Arseniks/education_time_management"
@@ -17,7 +17,7 @@ repository = "https://github.com/Arseniks/education_time_management"
 [tool.poetry.dependencies]
 python = "^3.10"
 
-[tool.poetry.dev.dependencies]
+[tool.poetry.dev-dependencies]
 mypy = "^1.4.1"
 black = "^23.1.0"
 tryceratops = "^1.1.0"
@@ -39,7 +39,7 @@ flake8-return = "^1.2.0"
 flake8-simplify = "^0.19.3"
 flake8-variables-names = "^0.0.5"
 
-[tool.poetry.test.dependencies]
+[tool.poetry.test-dependencies]
 pytest = "^7.4.0"
 
 [tool.black]
