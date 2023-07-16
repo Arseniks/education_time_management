@@ -38,8 +38,6 @@ flake8-quotes = "^3.3.2"
 flake8-return = "^1.2.0"
 flake8-simplify = "^0.19.3"
 flake8-variables-names = "^0.0.5"
-
-[tool.poetry.test-dependencies]
 pytest = "^7.4.0"
 
 [tool.black]
