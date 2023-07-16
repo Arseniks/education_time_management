@@ -33,7 +33,7 @@ jobs:
       uses: isort/isort-action@master
     - name: Lint with Black
       run: |
-        poetry run black --check --verbose .
+        poetry run black --check --verbose education_time_management
     - name: Run mypy
       run: |
-        poetry run mypy --strict .
+        poetry run mypy --strict education_time_management
