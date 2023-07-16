@@ -1,3 +1,45 @@
+[tool.poetry]
+name = "education_time_management"
+version = "0.1.0"
+description = "Web-приложение для оптимизации обучения школьников и студенто"
+authors = [
+    "Arseniks <senya.korotkov@gmail.com>",
+    "aeonva1ues <evgen.falkon@gmail.com>",
+    "Dmitriy Kirichenko <dimidrosh@gmail.com>",
+    "Andrulik <Avesvecha@yandex.ru>"
+]
+readme = "README.md"
+license = "Proprietary"
+
+[project.urls]
+repository = "https://github.com/Arseniks/education_time_management"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+mypy = "^1.4.1"
+black = "^23.1.0"
+tryceratops = "^1.1.0"
+flake8-absolute-import = "^1.0.0.1"
+flake8-annotations = "^3.0.0"
+flake8-async = "^22.11.14"
+flake8-bugbear = "^23.2.13"
+flake8-comprehensions = "^3.10.1"
+flake8-isort = "^6.0.0"
+pyflakes = "^3.0.1"
+flake8-plugin-utils = "^1.3.2"
+isort = "^5.12.0"
+flake8-print = "^5.0.0"
+pre-commit = "^3.2.0"
+pycodestyle = "^2.10.0"
+flake8-pytest-style = "^1.7.2"
+flake8-quotes = "^3.3.2"
+flake8-return = "^1.2.0"
+flake8-simplify = "^0.19.3"
+flake8-variables-names = "^0.0.5"
+pytest = "^7.4.0"
+
 [tool.black]
 line-length = 126
 include = '\.pyi?$'
