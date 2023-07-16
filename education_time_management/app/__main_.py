@@ -5,7 +5,7 @@ from pathlib import Path
 import uvicorn
 from fastapi import FastAPI
 
-from app import config
+from education_time_management.app import config
 
 
 def main():
