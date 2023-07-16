@@ -36,4 +36,4 @@ jobs:
         poetry run black --check --verbose .
     - name: Run mypy
       run: |
-        poetry run mypy --strict
+        poetry run mypy --strict .
