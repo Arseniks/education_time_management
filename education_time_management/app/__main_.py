@@ -8,7 +8,7 @@ from fastapi import FastAPI
 from education_time_management.app import config
 
 
-def main():
+def main() -> None:
     description = (
         "Web-application for optimizing the learning of schoolchildren and students\n\n"
         "Dash app at \\ \n"
