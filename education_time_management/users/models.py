@@ -1,6 +1,6 @@
 from datetime import datetime
-from sqlalchemy import MetaData, Table, Column, Integer, String, TIMESTAMP, Boolean
 
+from sqlalchemy import Boolean, Column, Integer, MetaData, String, Table, TIMESTAMP
 
 metadata = MetaData()
 
