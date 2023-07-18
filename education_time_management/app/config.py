@@ -1,7 +1,6 @@
 """Ключевые параметры по умолчанию."""
-from pathlib import Path
 
-DB_PATH = Path(__file__).parents[1] / "db" / "education_time_management.db"
+DB_CONNECTION_URI = "postgresql://user:password@host:port/database_name"
 BACKEND_URL = "http://localhost"
 BACKEND_PORT = 5001
 BACKEND_URL_WITH_PORT = f"{BACKEND_URL}:{BACKEND_PORT}"
