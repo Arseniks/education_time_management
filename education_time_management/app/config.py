@@ -1,8 +1,11 @@
 """Ключевые параметры по умолчанию."""
+from dotenv import load_dotenv
 
-DB_CONNECTION_URI = "postgresql://user:password@host:port/database_name"
-BACKEND_URL = "http://localhost"
-BACKEND_PORT = 5001
+import os
+
+load_dotenv()
+
+DB_CONNECTION_URI = os.environ.get("DB_CONNECTION_URI")
+BACKEND_URL = os.environ.get("BACKEND_URL")
+BACKEND_PORT = os.environ.get("BACKEND_PORT")
 BACKEND_URL_WITH_PORT = f"{BACKEND_URL}:{BACKEND_PORT}"
-
-FRONTEND_PORT = 8000
