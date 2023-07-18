@@ -16,6 +16,8 @@ repository = "https://github.com/Arseniks/education_time_management"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+uvicorn = "^0.23.0"
+fastapi = "^0.100.0"
 
 [tool.poetry.dev-dependencies]
 mypy = "^1.4.1"
