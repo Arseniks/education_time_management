@@ -1,7 +1,6 @@
-from fastapi_users.authentication import CookieTransport, AuthenticationBackend
-from fastapi_users.authentication import JWTStrategy
-from education_time_management.app.config import JWT_SECRET_KEY
+from fastapi_users.authentication import AuthenticationBackend, CookieTransport, JWTStrategy
 
+from education_time_management.app.config import JWT_SECRET_KEY
 
 cookie_transport = CookieTransport(cookie_name="education_time_management", cookie_max_age=3600)
 
