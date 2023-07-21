@@ -1,12 +1,15 @@
+import uuid
 from datetime import datetime
 
-from sqlalchemy import Boolean, Column, Integer, MetaData, String, Table, TIMESTAMP
+from sqlalchemy import Boolean, Column, Integer, String, Table, UUID
+from sqlalchemy.dialects.postgresql import TIMESTAMP
 
-metadata = MetaData()
+from education_time_management.db.base import metadata
 
 user = Table(
     "user",
     metadata,
+    Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4),
     Column("id", Integer, primary_key=True),
     Column("email", String, nullable=False),
     Column("username", String, nullable=False),

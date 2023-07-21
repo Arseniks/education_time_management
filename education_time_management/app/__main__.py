@@ -4,7 +4,7 @@ import argparse
 import uvicorn
 from fastapi import FastAPI
 
-from education_time_management.app import config
+from education_time_management.app.config import settings
 
 
 def main() -> None:
@@ -19,20 +19,20 @@ def main() -> None:
     )
     parser.add_argument(
         "--db_connection_uri",
-        default=config.DB_CONNECTION_URI,
+        default=settings.DB_CONNECTION_URI,
         type=str,
-        help=f"полный URI для бд PostgreSQL [по умолчанию: {config.DB_CONNECTION_URI}]",
+        help=f"полный URI для бд PostgreSQL [по умолчанию: {settings.DB_CONNECTION_URI}]",
     )
     parser.add_argument(
         "--port",
-        default=config.BACKEND_PORT,
+        default=settings.BACKEND_PORT,
         type=int,
-        help=f"привязать сокет к этому порту [по умолчанию: {config.BACKEND_PORT}]",
+        help=f"привязать сокет к этому порту [по умолчанию: {settings.BACKEND_PORT}]",
     )
     parser.add_argument("--reload")
     args = parser.parse_args()
-    config.DB_CONNECTION_URI = args.db_connection_uri
-    config.BACKEND_URL_WITH_PORT = f"{config.BACKEND_URL}:{args.port}"
+    settings.DB_CONNECTION_URI = args.db_connection_uri
+    settings.BACKEND_URL_WITH_PORT = f"{settings.BACKEND_URL}:{args.port}"
 
     app = FastAPI()
 
