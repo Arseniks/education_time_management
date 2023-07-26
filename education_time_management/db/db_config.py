@@ -1,38 +1,40 @@
+"""Конфигурация и настройка бд"""
 from __future__ import annotations
 
-from typing import Optional
+from typing import AsyncGenerator, Optional
 
-from sqlalchemy import create_engine, Engine
-from sqlalchemy.orm import Session, sessionmaker
+from sqlalchemy.ext.asyncio import async_sessionmaker, AsyncEngine, AsyncSession, create_async_engine
+from sqlalchemy.orm import DeclarativeBase
 
-from education_time_management.app.config import settings
+from education_time_management.config import settings
+
+
+class Base(DeclarativeBase):
+    pass
 
 
 class DbConfig:
     """Класс конфигурации подключения к базе данных"""
 
-    _self = None
-
-    def __new__(cls, *args, **kwargs) -> DbConfig:
-        if cls._self is None:
-            cls._self = super().__new__(cls)
-        return cls._self
-
     def __init__(self, db_connection_uri: str) -> None:
-        self.db_uri = db_connection_uri
-        self.engine = None
+        self.db_uri: str = db_connection_uri
+        self.engine: Optional[AsyncEngine] = None
 
-    def get_engine(self) -> Optional[Engine]:
-        """Получаю engine к текущей базе"""
+    def get_engine(self) -> Optional[AsyncEngine]:
+        """Получение движка к текущей базе"""
         if self.engine:
-            self.engine = create_engine(settings.DB_CONNECTION_URI, echo=False)
+            self.engine = create_async_engine(settings.DB_CONNECTION_URI, echo=False)
         return self.engine
 
-    def session_factory(self) -> Session:
-        """Создание сессии"""
-        engine = create_engine(self.db_uri)
-        session = sessionmaker(bind=engine)
-        return session()
+    def session_factory(self) -> AsyncSession:
+        """Получение сессии подключения к базе"""
+        engine = self.get_engine()
+        return async_sessionmaker(engine)()
+
+    async def get_async_session(self) -> AsyncGenerator[AsyncSession, AsyncEngine]:
+        db = self.session_factory()
+        async with db as session:
+            yield session
 
 
 DB_DATA = DbConfig(db_connection_uri=settings.DB_CONNECTION_URI)
