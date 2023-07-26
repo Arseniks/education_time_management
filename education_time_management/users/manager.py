@@ -22,8 +22,5 @@ class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
         print(f"Verification requested for user {user.id}. Verification token: {token}")
 
 
-async def get_user_manager(user_db=Depends(get_user_db)) -> AsyncGenerator[
-    UserManager,
-    None
-]:
+async def get_user_manager(user_db=Depends(get_user_db)) -> AsyncGenerator[UserManager, None]:
     yield UserManager(user_db)
