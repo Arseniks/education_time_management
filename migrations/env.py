@@ -4,7 +4,7 @@ from alembic import context
 from sqlalchemy import engine_from_config, pool
 
 from education_time_management.config import settings
-from education_time_management.db.db_config import Base
+from education_time_management.users.models import Base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
