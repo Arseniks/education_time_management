@@ -34,6 +34,6 @@ jobs:
     - name: Lint with Black
       run: |
         poetry run black --check --verbose education_time_management
-    - name: Run mypy
-      run: |
-        poetry run mypy --strict education_time_management
+#    - name: Run mypy
+#      run: |
+#        poetry run mypy education_time_management

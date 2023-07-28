@@ -18,6 +18,18 @@ repository = "https://github.com/Arseniks/education_time_management"
 python = "^3.10"
 uvicorn = "^0.23.0"
 fastapi = "^0.100.0"
+sqlalchemy = "^2.0.19"
+alembic = "^1.11.1"
+python-dotenv = "^1.0.0"
+fastapi-users = {extras = ["sqlalchemy"], version = "^12.1.0"}
+pydantic-settings = "^2.0.2"
+asyncpg = "^0.28.0"
+psycopg2-binary = "^2.9.6"
+typer = "^0.9.0"
+colorama = "^0.4.6"
+mypy-extensions = "^1.0.0"
+types-passlib = "^1.7.7.12"
+types-python-jose = "^3.3.4.8"
 
 [tool.poetry.dev-dependencies]
 mypy = "^1.4.1"
