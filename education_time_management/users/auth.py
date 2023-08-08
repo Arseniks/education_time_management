@@ -1,5 +1,3 @@
-from typing import Type
-
 from fastapi_users import FastAPIUsers
 from fastapi_users.authentication import AuthenticationBackend, CookieTransport, JWTStrategy
 
